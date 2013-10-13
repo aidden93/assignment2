@@ -25,7 +25,7 @@ public class GameTree implements GameTreeInterface
 		Informally: creates an empty tree
 	*/
 	{
-COMPLETE ME
+		root = null;
 	}
 
 
