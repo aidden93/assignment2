@@ -30,6 +30,7 @@ public class Dimension implements DimensionInterface
 	{
 		vert = v; //set number of rows(height) of maze to v
 		horiz = h; //set number of columns(width) of maze to h 
+		//TODO constructor
 	}
 
 
@@ -44,6 +45,7 @@ public class Dimension implements DimensionInterface
 	*/
 	{
 		vert = v; //set number of rows(height) of maze to v
+		//TODO setVert
 	}
 
 
@@ -58,6 +60,7 @@ public class Dimension implements DimensionInterface
 	*/
 	{
 		horiz = h; //set number of columns(width) of maze to h 
+		//TODO setHoriz
 	}
 
 
@@ -72,6 +75,7 @@ public class Dimension implements DimensionInterface
 	*/
 	{
 		return vert; //get number of rows(height) 
+		//TODO getVert
 	}
 
 
@@ -86,5 +90,6 @@ public class Dimension implements DimensionInterface
 	*/
 	{
 		return horiz; //get number of columns(width)
+		//TODO getHoriz
 	}
 }
