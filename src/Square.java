@@ -70,6 +70,7 @@ public class Square implements SquareInterface, Cloneable
 		start = false; //set square to not be the start square
 		stop = false; //set square to not be the stop square
 		number = n; //the squares number
+		//TODO constructor
 	}
 
 
@@ -142,6 +143,7 @@ public class Square implements SquareInterface, Cloneable
 	*/
 	{
 		return loc; //get the squares position in the grid
+		//TODO getLocation
 	}
 
 
@@ -158,6 +160,7 @@ public class Square implements SquareInterface, Cloneable
 	*/
 	{
 		loc = l; //set the squares location in the grid
+		//TODO setLocation
 	}
 
 
@@ -171,6 +174,7 @@ public class Square implements SquareInterface, Cloneable
 	*/
 	{
 		return colour; //get the squares colour
+		//TODO getColour
 	}
 
 
@@ -186,6 +190,7 @@ public class Square implements SquareInterface, Cloneable
 	*/
 	{
 		colour = c; //set the squares colour
+		//TODO setColour
 	}
 
 
@@ -200,6 +205,7 @@ public class Square implements SquareInterface, Cloneable
 	*/
 	{
 		return wall; //return true if the square is a wall, otherwise false
+		//TODO isWall
 	}
 
 
@@ -239,6 +245,7 @@ public class Square implements SquareInterface, Cloneable
 	*/
 	{
 		return visited; //returns true if the square has been visited, otherwise false
+		//TODO isOccupied
 	}
 
 
@@ -271,6 +278,7 @@ public class Square implements SquareInterface, Cloneable
 	*/
 	{
 		return number; //get the squares number
+		//TODO numbered
 	}
 
 
@@ -285,6 +293,7 @@ public class Square implements SquareInterface, Cloneable
 	*/
 	{
 		number = n; //set the squares number
+		//TODO squareNumber
 	}
 
 
@@ -299,6 +308,7 @@ public class Square implements SquareInterface, Cloneable
 	*/
 	{
 		return stop; //returns true if the square is the goal square, otherwise false
+		//TODO isStopSquare
 	}
 
 
@@ -329,6 +339,7 @@ public class Square implements SquareInterface, Cloneable
 	*/
 	{
 		return start; //returns true if the square is the starting square, otherwise false
+		//TODO isStartSquare
 	}
 
 
