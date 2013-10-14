@@ -365,5 +365,23 @@ public class Maze extends Frame implements ActionListener
 	*/
    	{
    		//TODO breadthFirst
+   		if (paintMe.getParent().isEmpty()) {
+   			solvable = false;
+   		}
+   		else {
+   			GameTree l = paintMe.getLeft();
+   			GameTree r = paintMe.getRight();
+   			
+   			if (!l.isEmpty()) {
+   				traversal.add(l);
+   			}
+   			if (!r.isEmpty()) {
+   				traversal.add(r);
+   			}
+   			
+   			if (!traversal.isEmpty()) {
+
+   			}
+   		}
    	}
 }
