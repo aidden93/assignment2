@@ -343,7 +343,7 @@ public class Maze extends Frame implements ActionListener
 					and display the solution when (if) it is found
 	*/
    	{
-COMPLETE ME
+   		//TODO depthFirst
 	}
 
 
@@ -364,6 +364,6 @@ COMPLETE ME
 					and display the solution when (if) it is found
 	*/
    	{
-COMPLETE ME
+   		//TODO breadthFirst
    	}
 }
