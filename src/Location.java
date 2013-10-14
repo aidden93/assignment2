@@ -29,6 +29,7 @@ public class Location implements LocationInterface
 	*/
 		row = r; //set the vertical position
 		column = c; //set the horizontal position
+		//TODO constructor
 	}
 
 
@@ -43,6 +44,7 @@ public class Location implements LocationInterface
 	*/
 	{
 		row = r; //set the vertical position
+		//TODO setRow
 	}
 
 
@@ -57,6 +59,7 @@ public class Location implements LocationInterface
 	*/
 	{
 		column = c; //set the horizontal position
+		//TODO setColumn
 	}
 
 
@@ -71,6 +74,7 @@ public class Location implements LocationInterface
 	*/
 	{
 		return row; //get the vertical position
+		//TODO getRow
 	}
 
 
@@ -85,5 +89,6 @@ public class Location implements LocationInterface
 	*/
 	{
 		return column; //get the horizontal position
+		//TODO getColumn
 	}
 }
