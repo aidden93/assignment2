@@ -9,7 +9,7 @@
 	of a "root" field which refers to a TNode object
 	which has a "data" field and "left", "forward",
 	and "right" references.
-*/
+ */
 
 
 public class GameTree implements GameTreeInterface
@@ -23,9 +23,10 @@ public class GameTree implements GameTreeInterface
 		Pre-condition: none
 		Post-condition: the GameTree object's "first" field is null
 		Informally: creates an empty tree
-	*/
+	 */
 	{
 		root = null;
+		//TODO constructor
 	}
 
 
@@ -40,11 +41,10 @@ public class GameTree implements GameTreeInterface
 		Informally: create a tree of a single node (i.e. a leaf)
 					with the node value provided on the parameter
 					list
-	*/
+	 */
 	{
 		root = new TNode(o);
-		parent == null;
-		child == null;
+		//TODO constructor
 	}
 
 
@@ -60,9 +60,11 @@ public class GameTree implements GameTreeInterface
 		Informally: create a tree of a single node (i.e. a leaf)
 					with the node value provided on the parameter
 					list and the given parent
-	*/
+	 */
 	{
 		root = new TNode(o);
+		root.setParent(p.root);
+		//TODO constructor
 	}
 
 
@@ -72,7 +74,7 @@ public class GameTree implements GameTreeInterface
 		Post-condition: true is returned if the GameTree object has no
 						items, false is returned if it does
 		Informally: indicate if the GameTree contains no nodes
-	*/
+	 */
 	{
 		return(root == null);
 	}
@@ -86,7 +88,7 @@ public class GameTree implements GameTreeInterface
 						field is returned
 		Informally: return the value within the root node,
 					throw an exception if the tree is empty
-	*/
+	 */
 	{
 		if (isEmpty())
 		{
@@ -106,7 +108,7 @@ public class GameTree implements GameTreeInterface
 						constructed GameTree object
 		Informally: return the GameTree object's parent, throw an
 						exception if the tree is empty
-	*/
+	 */
 	{
 		GameTree r;
 
@@ -131,18 +133,18 @@ public class GameTree implements GameTreeInterface
 						constructed GameTree object
 		Informally: return the GameTree object's left child, throw
 						an exception if the tree is empty
-	*/
+	 */
 	{
 		GameTree l;
-		
+
 		if(isEmpty()){
-			throw new EmptyGameTreeException;
-	
+			throw new EmptyGameTreeException();
+
 		}
 		l = new GameTree();
 		l.root = root.getLeft();
 		return l;
-		
+		//TODO getLEft
 	}
 
 
@@ -155,17 +157,18 @@ public class GameTree implements GameTreeInterface
 						constructed GameTree object
 		Informally: return the GameTree object's forward child,
 						throw an exception if the tree is empty
-	*/
+	 */
 	{
 		GameTree f;
 		if(isEmpty()){
-			throw new EmptyGameTreeException;
-			
-	
+			throw new EmptyGameTreeException();
+
+
 		}
 		f = new GameTree();
 		f.root = root.getForward();
 		return f;
+		//TODO getForward
 	}
 
 
@@ -178,17 +181,18 @@ public class GameTree implements GameTreeInterface
 						constructed GameTree object
 		Informally: return the GameTree object's right child,
 						throw an exception if the tree is empty
-	*/
+	 */
 	{
 		GameTree r;
 		if(isEmpty()){
-			throw new EmptyGameTreeException;
-			
-	
+			throw new EmptyGameTreeException();
+
+
 		}
 		r = new GameTree();
 		r.root = root.getRight();
 		return r;
+		//TODO getRight
 	}
 
 
@@ -201,7 +205,7 @@ public class GameTree implements GameTreeInterface
 		Informally: store the given value in the root node of the
 					GameTree object, throw an exception if the tree is
 					empty
-	*/
+	 */
 	{
 		if (isEmpty())
 		{
@@ -221,7 +225,7 @@ public class GameTree implements GameTreeInterface
 		Informally: assign the given value as the parent of the
 					GameTree object, throw an exception if the tree is
 					empty
-	*/
+	 */
 	{
 		if (isEmpty())
 		{
@@ -241,9 +245,10 @@ public class GameTree implements GameTreeInterface
 		Informally: assign the given value as the left child of
 					the GameTree object, throw an exception if the tree
 					is empty
-	*/
+	 */
 	{
-COMPLETE ME
+		root.setLeft(t.root);
+		//TODO setLeft
 	}
 
 
@@ -256,9 +261,10 @@ COMPLETE ME
 		Informally: assign the given value as the forward child of
 					the GameTree object, throw an exception if the tree
 					is empty
-	*/
+	 */
 	{
-COMPLETE ME
+		root.setForward(t.root);
+		//TODO setForward
 	}
 
 
@@ -271,9 +277,10 @@ COMPLETE ME
 		Informally: assign the given value as the right child of
 					the GameTree object, throw an exception if the tree
 					is empty
-	*/
+	 */
 	{
-COMPLETE ME
+		root.setRight(t.root);
+		//TODO setRight
 	}
 
 
@@ -286,7 +293,7 @@ COMPLETE ME
 					object is the empty tree
 		Informally: produce a String representation of the tree's root
 					node
-	*/
+	 */
 	{
 		String s="";
 		if (isEmpty())
@@ -310,7 +317,7 @@ COMPLETE ME
 					forward, right), separated by " " and
 					contained within "<" and ">"
 		Informally: produce a String representation of the Stack
-	*/
+	 */
 	{
 		GameTree c;
 
