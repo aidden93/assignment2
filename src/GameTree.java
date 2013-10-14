@@ -42,7 +42,9 @@ COMPLETE ME
 					list
 	*/
 	{
-COMPLETE ME
+		root = new TNode(o);
+		parent == null;
+		child == null;
 	}
 
 
@@ -60,7 +62,7 @@ COMPLETE ME
 					list and the given parent
 	*/
 	{
-COMPLETE ME
+		root = new TNode(o);
 	}
 
 
@@ -72,7 +74,7 @@ COMPLETE ME
 		Informally: indicate if the GameTree contains no nodes
 	*/
 	{
-COMPLETE ME
+		return(root == null);
 	}
 
 
@@ -131,7 +133,16 @@ COMPLETE ME
 						an exception if the tree is empty
 	*/
 	{
-COMPLETE ME
+		GameTree l;
+		
+		if(isEmpty()){
+			throw new EmptyGameTreeException;
+	
+		}
+		l = new GameTree();
+		l.root = root.getLeft();
+		return l;
+		
 	}
 
 
@@ -146,7 +157,15 @@ COMPLETE ME
 						throw an exception if the tree is empty
 	*/
 	{
-COMPLETE ME
+		GameTree f;
+		if(isEmpty()){
+			throw new EmptyGameTreeException;
+			
+	
+		}
+		f = new GameTree();
+		f.root = root.getForward();
+		return f;
 	}
 
 
@@ -161,7 +180,15 @@ COMPLETE ME
 						throw an exception if the tree is empty
 	*/
 	{
-COMPLETE ME
+		GameTree r;
+		if(isEmpty()){
+			throw new EmptyGameTreeException;
+			
+	
+		}
+		r = new GameTree();
+		r.root = root.getRight();
+		return r;
 	}
 
 
