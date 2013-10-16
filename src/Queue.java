@@ -74,7 +74,7 @@ public class Queue implements QueueInterface
 		if (isEmpty()) //check if queue is empty
 			throw new EmptyQueueException(); //if empty, throw exception. nothing in the queue
 		//TODO front
-		return first;
+		return first.getData();
 	}
 
 
