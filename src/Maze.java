@@ -1,6 +1,6 @@
 /*
 	Graphical User Interface and Maze
-	Author: J.R. Dermoudy & <<INSERT YOUR NAME HERE>>
+	Author: J.R. Dermoudy & <<Aidden Mazey & Julian Sharp>>
 	Date: September 2013
 
 	This file corresponds to the setup() and solve()
@@ -21,7 +21,7 @@ import java.io.*;
 public class Maze extends Frame implements ActionListener
 {
 	private final int HORIZONTAL[]={-1,0,+1,0};	// together these two arrays represent changes to the row and column for
-	private final int VERTICAL[]={0,-1,0,+1};	// the four movements: [0] is left, [1] is up, [2] is right, [3] is down
+	private final int VERTICAL[]=  {0,-1,0,+1};	// the four movements: [0] is left, [1] is up, [2] is right, [3] is down
 	private final boolean TRACING=false;		// display trace output?
    	private final String FILENAME="maze.txt";			// the file containing the maze
 
@@ -353,7 +353,7 @@ public class Maze extends Frame implements ActionListener
    		}
 		else{
 			paint(window.getGraphics());
-			for(int i = 0; i < 3; i++){
+			for(int i = 0; i <= 3; i++){
 				Location l2 = new Location(gameGrid.getLocation().getColumn()+HORIZONTAL[i],gameGrid.getLocation().getRow()+VERTICAL[i]);
 				if(gameGrid.validMove(l2) && !gameGrid.getSquare(l2).isOccupied() && !gameGrid.isWall(l2)){
 					Grid newGrid = (Grid)gameGrid.clone();
@@ -423,7 +423,7 @@ public class Maze extends Frame implements ActionListener
 					Grid currentGrid = (Grid)currentTree.getData();
 					Square currentSquare = currentGrid.getSquare((currentGrid.getLocation()));System.out.println(currentSquare.getLocation().getColumn()+" "+currentSquare.getLocation().getRow());
 					if (!currentSquare.isStopSquare()) {
-						for (int i =0; i < 3; i++) {
+						for (int i =0; i <= 3; i++) {
 							Location l = new Location(currentGrid.getLocation().getColumn()+HORIZONTAL[i], currentGrid.getLocation().getRow()+VERTICAL[i]);
 							System.out.println(l.getColumn()+" "+l.getRow());
 							if (currentGrid.validMove(l)&& !currentGrid.getSquare(l).isOccupied() && currentGrid.isWall(l)) {
