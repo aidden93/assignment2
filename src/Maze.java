@@ -327,6 +327,7 @@ public class Maze extends Frame implements ActionListener
 
 
    	public void depthFirst(Stack traversal)
+   	{
 	/*
 		Pre-condition: the current game tree (which may be empty) holds
 					   the current state of maze solution, the given
@@ -342,11 +343,57 @@ public class Maze extends Frame implements ActionListener
 		Informally: solve the maze through depth-first exploration
 					and display the solution when (if) it is found
 	*/
-   	{
-   		//TODO depthFirst
-	}
+   	if(!paintMe.isEmpty())	{
+   		Grid gameGrid = (Grid)paintMe.getData();
+   		Location l = gameGrid.getLocation();
+   		if(gameGrid.getGoal() == gameGrid.getSquare(l).numbered() ){
+   			solved = true;
+   			paint(window.getGraphics());
+   	
+   		}
+		else{
+			paint(window.getGraphics());
+			System.out.println(l.getColumn()+""+l.getRow());
+			for(int i = 0; i < 3; i++){
+				Location l2 = new Location(gameGrid.getLocation().getColumn()+HORIZONTAL[i],gameGrid.getLocation().getRow()+VERTICAL[i]);
+				if(gameGrid.validMove(l2) && !gameGrid.getSquare(l2).isOccupied() && !gameGrid.isWall(l2)){
+					Grid newGrid = (Grid)gameGrid.clone();
+					newGrid.occupySquare(l2, true);
+					GameTree newTree = new GameTree(newGrid);
+					if(i == 0){
+						paintMe.setLeft(newTree);
+					}
+					else
+					if(i == 1){
+						paintMe.setForward(newTree);	
+					}
+					else
+					{
+						paintMe.setRight(newTree);
+					}
+					traversal.push(newTree);
+				}
+			}
+			if(traversal.isEmpty() && !solved){
+				solvable = false;
+			
+				
+			}
+			else{
+				
+				paintMe = (GameTree)traversal.top();
+				traversal.pop();
+				count++;
+				depthFirst(traversal);
+			}
+			
+		}
+	
+   	}
 
-
+   	
+   	
+   	}
    	public void breadthFirst(Queue traversal)
 	/*
 		Pre-condition: the given game tree (which may be empty) holds
@@ -365,23 +412,5 @@ public class Maze extends Frame implements ActionListener
 	*/
    	{
    		//TODO breadthFirst
-   		if (paintMe.getParent().isEmpty()) {
-   			solvable = false;
-   		}
-   		else {
-   			GameTree l = paintMe.getLeft();
-   			GameTree r = paintMe.getRight();
-   			
-   			if (!l.isEmpty()) {
-   				traversal.add(l);
-   			}
-   			if (!r.isEmpty()) {
-   				traversal.add(r);
-   			}
-   			
-   			if (!traversal.isEmpty()) {
-
-   			}
-   		}
    	}
 }
