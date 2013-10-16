@@ -353,7 +353,6 @@ public class Maze extends Frame implements ActionListener
    		}
 		else{
 			paint(window.getGraphics());
-			System.out.println(l.getColumn()+""+l.getRow());
 			for(int i = 0; i < 3; i++){
 				Location l2 = new Location(gameGrid.getLocation().getColumn()+HORIZONTAL[i],gameGrid.getLocation().getRow()+VERTICAL[i]);
 				if(gameGrid.validMove(l2) && !gameGrid.getSquare(l2).isOccupied() && !gameGrid.isWall(l2)){
@@ -394,7 +393,7 @@ public class Maze extends Frame implements ActionListener
    	
    	
    	}
-   	public void breadthFirst(Queue traversal)
+	public void breadthFirst(Queue traversal)
 	/*
 		Pre-condition: the given game tree (which may be empty) holds
 					   the current state of maze solution, the given
@@ -409,8 +408,74 @@ public class Maze extends Frame implements ActionListener
 						"solved" is true
 		Informally: solve the maze through breadth-first exploration
 					and display the solution when (if) it is found
-	*/
-   	{
-   		//TODO breadthFirst
-   	}
+	 */
+	{
+		//TODO breadthFirst
+
+		if (!paintMe.isEmpty()) {
+			traversal.add(paintMe); //add initial gametree to queue
+			
+			while (!traversal.isEmpty()) { //loop while queue isn't empty
+				GameTree currentTree = (GameTree)traversal.front(); //get first gametree in the queue
+				traversal.remove(); //remove front of queue
+				
+				if(!currentTree.isEmpty()) {
+					Grid currentGrid = (Grid)currentTree.getData();
+					Square currentSquare = currentGrid.getSquare((currentGrid.getLocation()));System.out.println(currentSquare.getLocation().getColumn()+" "+currentSquare.getLocation().getRow());
+					if (!currentSquare.isStopSquare()) {
+						for (int i =0; i < 3; i++) {
+							Location l = new Location(currentGrid.getLocation().getColumn()+HORIZONTAL[i], currentGrid.getLocation().getRow()+VERTICAL[i]);
+							System.out.println(l.getColumn()+" "+l.getRow());
+							if (currentGrid.validMove(l)&& !currentGrid.getSquare(l).isOccupied() && currentGrid.isWall(l)) {
+								
+								
+							
+												
+						
+								//traversal.add(newTree);
+								//count++;
+							}
+						}
+					}
+				}
+			}
+			/*
+			GameTree currentTree;
+			
+				System.out.println(traversal.toString());
+				Grid currentGrid = (Grid)traversal.front(); //get first grid in the queue
+				currentTree = new GameTree(paintMe.getData());
+				
+				traversal.remove(); //remove top of queue
+
+				if (currentGrid != null) {
+					Square currentSquare = currentGrid.getSquare((currentGrid.getLocation()));
+					if (!currentSquare.isStopSquare()) {
+						for (int i =0; i <3; i++) {
+							Location l = new Location(currentSquare.getLocation().getColumn()+HORIZONTAL[i], currentSquare.getLocation().getRow()+VERTICAL[i]);
+							if (currentGrid.validMove(l) && !currentGrid.getSquare(l).isOccupied() && !currentGrid.isWall(l)){
+								Grid newGrid = (Grid)currentGrid.clone();
+								newGrid.occupySquare(l, true);
+								GameTree newTree = new GameTree(newGrid, currentTree);
+								if (i == 0) {
+									currentTree.setLeft(newTree);
+								}
+								else if (i == 1) {
+									currentTree.setForward(newTree);
+								}
+								else {
+									currentTree.setRight(newTree);
+								}
+								traversal.add(newGrid);
+							}
+						}
+					}
+					else {
+						//FOUND STOP SQUARE
+						paintMe = currentTree;
+					}
+				}
+			}*/
+		}
+	}
 }
