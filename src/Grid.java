@@ -260,7 +260,9 @@ public class Grid implements GridInterface, Cloneable
 					maze with the given value
 	*/
 	{
-		grid[l.getRow()][l.getColumn()].occupied(o); //set the square at the specified locations occupied value to o
+		Square s = grid[l.getRow()-1][l.getColumn()-1];
+				s.occupied(o); //set the square at the specified locations occupied value to o
+		setLocation(s.getLocation());
 		//TODO set square visited
 	}
 
@@ -279,7 +281,7 @@ public class Grid implements GridInterface, Cloneable
 	*/
 	{
 		//TODO squareOccupied
-		return grid[l.getRow()][l.getColumn()].isOccupied(); //returns true if the square at the specified location has been visited, otherwise false
+		return grid[l.getRow()-1][l.getColumn()-1].isOccupied(); //returns true if the square at the specified location has been visited, otherwise false
 	}
 
 
