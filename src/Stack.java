@@ -73,7 +73,7 @@ public class Stack implements StackInterface
 		if (isEmpty()) //check if the stack is empty
 			throw new EmptyStackException(); //if stack is empty throw an exception. no objects in stack to return
 		//TODO top
-		return tos; //return the node at the top of the stack
+		return tos.getData(); //return the node at the top of the stack
 	}
 
 
